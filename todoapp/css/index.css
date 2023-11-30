@@ -63,3 +63,16 @@
     color: #fff;
     cursor: pointer;
 }
+.title_details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+.title_details p{
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: normal;
+    color: #000;
+    font-family: var(--josh-font-family);
+}
