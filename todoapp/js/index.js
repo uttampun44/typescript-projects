@@ -6,6 +6,7 @@ let title_detail = document.querySelector('.title_details');
 let title_para;
 let todo;
 let task = [];
+let removeTask;
 // addtask function
 const addtask = () => {
     const taskTitle = title.value;
@@ -25,6 +26,16 @@ function displayTask() {
         title_para = document.createElement("p");
         title_detail.appendChild(title_para);
         title_para.innerText = taskItem;
+        removeTask = document.createElement("button");
+        removeTask.classList.add("remove_task");
+        title_detail.appendChild(removeTask).after(title_para);
+        removeTask.innerText = "Remove Task";
+        title_para.insertAdjacentElement("afterend", removeTask);
+        removeTask.addEventListener("click", () => {
+            localStorage.removeItem("to_do_app");
+            task.splice(0);
+            displayTask();
+        });
     }
 }
 addTask.addEventListener('click', function add_task() {
