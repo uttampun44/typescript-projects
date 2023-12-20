@@ -20,20 +20,23 @@ const addtask = () => {
         localStorage.setItem("to_do_app", JSON.stringify(task));
     }
 };
+// display task
 function displayTask() {
     title_detail.innerText = "";
-    for (let taskItem of task) {
+    for (let i = 0; i < task.length; i += 2) {
+        const taskTitle = task[i];
+        const taskDetail = task[i + 1];
         title_para = document.createElement("p");
         title_detail.appendChild(title_para);
-        title_para.innerText = taskItem;
+        title_para.innerText = `Title: ${taskTitle}, Details: ${taskDetail}`;
         removeTask = document.createElement("button");
         removeTask.classList.add("remove_task");
-        title_detail.appendChild(removeTask).after(title_para);
         removeTask.innerText = "Remove Task";
+        // Append the button after the details <p> tag
         title_para.insertAdjacentElement("afterend", removeTask);
         removeTask.addEventListener("click", () => {
-            localStorage.removeItem("to_do_app");
-            task.splice(0);
+            task.splice(i, 2);
+            localStorage.setItem("to_do_app", JSON.stringify(task));
             displayTask();
         });
     }
