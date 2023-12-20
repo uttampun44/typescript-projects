@@ -3,10 +3,11 @@ let addTask = document.querySelector('.add_task button');
 let title = document.querySelector('#title');
 let details = document.querySelector('#details');
 let title_detail = document.querySelector('.title_details');
-let title_para;
+let task_title;
 let todo;
 let task = [];
 let removeTask;
+let task_details;
 // addtask function
 const addtask = () => {
     const taskTitle = title.value;
@@ -26,14 +27,18 @@ function displayTask() {
     for (let i = 0; i < task.length; i += 2) {
         const taskTitle = task[i];
         const taskDetail = task[i + 1];
-        title_para = document.createElement("p");
-        title_detail.appendChild(title_para);
-        title_para.innerText = `Title: ${taskTitle}, Details: ${taskDetail}`;
+        task_title = document.createElement("p");
+        title_detail.appendChild(task_title);
+        task_details = document.createElement("p");
+        title_detail.appendChild(task_details);
+        task_title.innerText = `Title: ${taskTitle}`;
+        task_details.innerText = `Details: ${taskDetail}`;
+        //    remove task button
         removeTask = document.createElement("button");
         removeTask.classList.add("remove_task");
         removeTask.innerText = "Remove Task";
-        // Append the button after the details <p> tag
-        title_para.insertAdjacentElement("afterend", removeTask);
+        task_title.insertAdjacentElement("afterend", removeTask);
+        task_details.insertAdjacentElement("afterend", removeTask);
         removeTask.addEventListener("click", () => {
             task.splice(i, 2);
             localStorage.setItem("to_do_app", JSON.stringify(task));

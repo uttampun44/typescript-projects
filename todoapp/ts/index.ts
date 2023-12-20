@@ -3,11 +3,11 @@ let title = document.querySelector('#title') as HTMLInputElement;
 let details = document.querySelector('#details') as HTMLInputElement;
 let title_detail = document.querySelector('.title_details') as HTMLDivElement
 
-let title_para
+let task_title
 let todo;
 let task:string [] = [];
 let removeTask;
-
+let task_details
 // addtask function
 
 const addtask = ():void =>{
@@ -34,16 +34,24 @@ function displayTask(){
        const taskTitle = task[i];
        const taskDetail = task[i + 1];
 
-       title_para = document.createElement("p") as HTMLParagraphElement;
-       title_detail.appendChild(title_para);
-       title_para.innerText = `Title: ${taskTitle}, Details: ${taskDetail}`;
 
+       task_title = document.createElement("p") as HTMLParagraphElement;
+       title_detail.appendChild(task_title);
+
+       task_details = document.createElement("p")as HTMLParagraphElement;
+       title_detail.appendChild(task_details);
+
+       task_title.innerText = `Title: ${taskTitle}`;
+       task_details.innerText = `Details: ${taskDetail}`;
+
+    //    remove task button
        removeTask = document.createElement("button") as HTMLButtonElement;
        removeTask.classList.add("remove_task");
        removeTask.innerText = "Remove Task";
 
-       // Append the button after the details <p> tag
-       title_para.insertAdjacentElement("afterend", removeTask);
+
+       task_title.insertAdjacentElement("afterend", removeTask);
+       task_details.insertAdjacentElement("afterend", removeTask);
 
        removeTask.addEventListener("click", () => {
            task.splice(i, 2);
