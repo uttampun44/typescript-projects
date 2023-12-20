@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/index.js" defer></script>
+</head>
+<body>
+    <main>
+         <section>
+             <div class="container">
+                  <div class="cols_container">
+                    <div class="input_container">
+                        <input name="temperature_value" placeholder="Enter in Celsius or Farenhite" value="" id="user_input"/>
+                   </div>
+
+                   <div class="temperature_selection">
+                      <label for="select_temperature">Convert temperature in celsius/Farenhite</label>
+                      <select aria-selected="true" id="select-option">
+                           <option value="celcsius" selected>Celsius</option>
+                           <option value="Farenhite">Farenhite</option>
+                      </select>
+                      <button id="check-value">Check value</button>
+                      <p id="value"></p>
+                    </div>
+                 </div>
+             </div>
+         </section>
+    </main>
+</body>
+</html>
