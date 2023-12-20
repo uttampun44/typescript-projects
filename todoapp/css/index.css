@@ -72,15 +72,19 @@
 }
 .title_details p{
     font-size: 1.5rem;
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-regular);
     line-height: normal;
     color: #000;
     font-family: var(--josh-font-family);
 }
 .title_details button{
-    width: 50%;
+    width: 100%;
     margin: auto;
-    padding: .5em 0em;
+    padding: .7em 0em;
     border-radius: 10px;
     cursor: pointer;
+    background-color: var(--main-primary-color);
+    font-family: var(--josh-font-family);
+    color: #fff;
+    border: none;
 }
