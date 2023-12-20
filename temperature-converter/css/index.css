@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Oswald:wght@700&display=swap');
+
+:root{
+    --primary-font: 'Open Sans', sans-serif;
+    --font-weight: 500;
+}
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 992px;
+    margin: 4em auto;
+    background-color: #000;
+    border-radius: 10px;
+}
+.cols_container{
+    display: grid;
+    justify-content: center;
+    padding: 2em 0em;
+    row-gap: 2em;
+}
+.input_container input{
+    padding: .5em 1em;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+}
+.input_container input::placeholder{
+    font-family: var(--primary-font);
+    color: #000;
+    font-weight: var(--font-weight);
+    font-style: normal;
+}
+.temperature_selection{
+    display: grid;
+    row-gap: 1em;
+}
+.temperature_selection label{
+    color: #fff;
+    font-family: var(--primary-font);
+    font-weight: var(--font-weight);
+    font-style: normal;
+}
+.temperature_selection select{
+    font-weight: var(--font-weight);
+    font-family: var(--primary-font);
+    padding: .5em 0em;
+    border-radius: 5px;
+    font-style: normal;
+}
+.temperature_selection select option{
+    font-weight: var(--font-weight);
+    font-family: var(--primary-font);
+    padding: .5em 0em;
+    font-style: normal;
+}
+.temperature_selection button{
+
+    border-radius: 5px;
+    padding: .5em 0em;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(85, 180, 149);
+    color: #fff;
+    font-family: var(--primary-font);
+    font-weight: var(--font-weight);
+}
+.temperature_selection p{
+    color: #fff;
+    font-family: var(--primary-font);
+    font-weight: var(--font-weight);
+    line-height: normal;
+    font-style: normal;
+}
