@@ -8,6 +8,13 @@ let user_input = document.querySelector("#user_input") as HTMLInputElement;
 // function to calculate the value and display
 const displayValue = () =>{
 
+    if(user_input){
+        const inputVal: number | bigint = parseFloat(user_input.value);
+
+         const farenhite = (inputVal * 9/5) + 32;
+
+         value_text.innerText = ` Farenhite Value : ${farenhite.toString()}`;
+    }
 }
 
 // select event
@@ -17,7 +24,6 @@ select_option.addEventListener("change", () =>{
 })
 
 // click to show the value
-
 check_value.addEventListener("click", function(){
-     user_input ? value_text.innerText = user_input.value  : value_text.innerText = "";
+ displayValue()
 })
