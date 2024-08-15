@@ -1,0 +1,57 @@
+:root{
+    --primary-color: #fff;
+    --regular-font-size: 16px;
+}
+
+.container{
+    max-width: 430px;
+    height: 932px;
+    width: auto;
+    margin: 4em auto;
+    background-color: #1C2634;
+    border-radius: 1em;
+    padding: 3em 2.9em;
+}
+.container h1{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--primary-color)
+}
+.container .yogaLogo{
+
+    display: flex;
+    justify-content: center;
+}
+.container .grid_user_input{
+    display: grid;
+    row-gap: .8em;
+    margin: 2.5em 0em 3em 0em;
+}
+.container .grid_user_input label{
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+.container .grid_user_input .weight,
+.container .grid_user_input .height{
+    display: grid;
+    row-gap: .6em;
+}
+
+.container .grid_user_input .weight input,
+.container .grid_user_input .height input{
+ border-radius: 1.3em;
+ height: 2.5em;
+ outline: none;
+}
+.container .checkResult{
+    max-width: 50%;
+    margin: 0% auto;
+}
+.container .checkResult button{
+    padding: .8em 3.5em;
+   border-radius: .7em;
+}
