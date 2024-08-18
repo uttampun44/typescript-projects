@@ -46,12 +46,23 @@
  border-radius: 1.3em;
  height: 2.5em;
  outline: none;
+ background-color: #3F678C;
+ border: none;
+ color: var(--primary-color);
+ font-weight: 400;
+ font-size: 1rem;
+ padding: .5em;
 }
 .container .checkResult{
-    max-width: 50%;
     margin: 0% auto;
 }
 .container .checkResult button{
     padding: .8em 3.5em;
    border-radius: .7em;
+   background-color: #DDAA8D;
+   color:var(--primary-color);
+   font-size: 1.6rem;
+   font-weight: 700;
+   border: none;
+   cursor: pointer;
 }

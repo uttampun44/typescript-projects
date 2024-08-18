@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bmi</title>
     <link rel="stylesheet" href="./css/index.css">
-    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/index.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -18,16 +18,18 @@
           <div class="grid_user_input">
               <div class="height">
                   <label>Enter Your Height</label>
-                  <input type="text" name="height" />
+                  <input type="text" name="height" id="height" />
+                  <p id="heightError"></p>
               </div>
 
               <div class="weight">
                   <label>Enter Your Weight</label>
-                  <input type="text" name="weight" />
+                  <input type="text" name="weight"  id="weight"/>
+                  <p id="weightError"></p>
               </div>
 
               <div class="checkResult">
-                  <button>Check Result</button>
+                  <button id="btn">Check Result</button>
               </div>
           </div>
     </div>
