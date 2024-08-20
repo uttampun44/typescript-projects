@@ -5,7 +5,7 @@
 
 .container{
     max-width: 430px;
-    height: 932px;
+    /* height: 932px; */
     width: auto;
     margin: 4em auto;
     background-color: #1C2634;
@@ -65,4 +65,10 @@
    font-weight: 700;
    border: none;
    cursor: pointer;
+}
+.weightLimit{
+    background-color: #3F678C;
+    color: #fff;
+    border-radius: 16px;
+    padding: 1em;
 }

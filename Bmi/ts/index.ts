@@ -1,80 +1,66 @@
+let btn = document.querySelector("#btn") as HTMLButtonElement;
 
+function bmi(e: MouseEvent): void {
+  let height = document.querySelector("#height") as HTMLInputElement;
+  let weight = document.querySelector("#weight") as HTMLInputElement;
 
-let  btn = document.querySelector('#btn') as HTMLButtonElement;
+  if (!btn && !weight && !height) return;
 
-function bmi(e: MouseEvent):void{
+  const heightValue: number = parseInt(height.value);
+  const weightValue: number = parseInt(weight.value);
 
-    let height = document.querySelector('#height') as HTMLInputElement;
-    let weight = document.querySelector('#weight') as HTMLInputElement;
-    let heighError = document.querySelector('#heightError') as HTMLParagraphElement;
-    let weightError = document.querySelector('#weightError') as HTMLParagraphElement;
+  if (isNaN(heightValue) && heightValue <= 0) {
+    alert("Please enter valid height");
+  }
 
+  if (isNaN(weightValue) && weightValue <= 0) {
+    alert("Please enter valid weight");
+  }
 
-  
-    if(!btn && !weight && !height) return
+  const results = weightValue / Math.pow(heightValue / 100, 2);
+  const bmi = results.toFixed(1);
 
-    const heightValue = Number(height.value);
-    const weightValue = Number(weight.value);
+  console.log("Calculated BMI:", results);
+  console.log("Bmi result", bmi);
 
+  let result = document.createElement("div") as HTMLDivElement;
+  let paragraphTag = document.createElement("p") as HTMLParagraphElement;
+  let paraDetail = document.createElement("p") as HTMLParagraphElement;
+  let bmiResultText = document.createElement("p") as HTMLParagraphElement;
 
-    const results =   (weight:number, height:number):number =>{
+  result.appendChild(paragraphTag);
+  result.appendChild(bmiResultText);
 
-        return weight/ Math.pow(height, 2)
-    }
- 
-  
+  if (parseInt(bmi) < 18.5) {
+    bmiResultText.textContent = "You are under weight";
+  } else if (parseInt(bmi) > 18.5 && parseInt(bmi) < 24.9) {
+    bmiResultText.textContent = "You are Fit";
+  } else if (parseInt(bmi) > 25 && parseInt(bmi) < 30) {
+    bmiResultText.textContent = "You are overweight";
+  } else if (parseInt(bmi) > 30) {
+    bmiResultText.textContent = "You are obesity";
+  }
 
-    // let isValid = true;
+  result.style.width = "100%";
+  result.style.height = "auto";
+  result.style.backgroundColor = "#3F678C";
+  result.style.color = "white";
+  result.style.padding = "10px 6px";
+  result.style.marginTop = "10px";
+  result.style.borderRadius = "1.3em";
+  paragraphTag.textContent = `Your BMI is ${bmi}`;
+  result.style.textAlign = "center"
+  result.style.fontSize = '1.5rem'
 
-    // if(isNaN(heightValue) && heightValue <= 0)
-    // {
-    //    weightError.innerText == "Only Accept Number"
-    //    isValid = false
-    // }else {
-    //     weightError.innerText = "";
-    // }
+  let checkResultDiv = btn.parentElement;
 
-    // if(isNaN(weightValue)  && weightValue <=0 ){
-    //     heighError.innerText == "Only Accept Number"
-    //     isValid = false
-    // }else{
-    //     heighError.innerText = ""
-    // }
+  checkResultDiv?.insertAdjacentElement("afterend", result);
 
-    // if (!isValid) {
-    //     return; 
-    // }
+  e.preventDefault();
 
-    const bmi = results(weightValue, heightValue);
-
-  
-    const formattedBmi = bmi.toFixed(2); // Format to 2 decimal places
-
-    // Log the BMI calculation
-    console.log('Calculated BMI:', bmi);
-    console.log('Formatted BMI:', formattedBmi);
-
-    let result = document.createElement('div') as HTMLDivElement
-    result.style.width = "200px";
-    result.style.height = "auto";
-    result.style.backgroundColor = "#3F678C";
-    result.style.color = "white";
-    result.style.padding = "10px 6px";
-    result.style.marginTop = "10px";
-    result.style.borderRadius = "1.3em"
-    result.textContent = `The height is ${height.value} and the weight is ${weight.value}`;
-  
-    let checkResultDiv = btn.parentElement;
-
-    
-    checkResultDiv?.insertAdjacentElement('afterend', result);
-
-    
-    e.preventDefault()
-   
-    console.log(`The height is ${height.value} and the weight is ${weight.value}`)
-   
+  console.log(
+    `The height is ${height.value} and the weight is ${weight.value}`
+  );
 }
 
-btn?.addEventListener('click', bmi);
-
+btn?.addEventListener("click", bmi);
