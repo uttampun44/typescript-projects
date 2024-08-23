@@ -61,4 +61,62 @@ main{
 }
 .rowBill{
     margin: 9em 0em 7em 0em;
+    display: flex;
+}
+.rowBill .laptop{
+    width: 40%;
+}
+.rowBill .billPayment{
+    width: 60%;
+}
+.rowBill .laptop strong{
+    color: var(--primary-text-color);
+    display: block;
+    text-align: center;
+}
+.billPayment h5{
+    color: var(--primary-text-color);
+    font-size: 2rem;
+    font-weight: 400;
+}
+.billPayment p{
+    color: var(--primary-text-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.billPayment .personInput {
+    margin: 1em 0em;
+}
+.billPayment .personInput input{
+    max-width: 60%;
+    width: 100%;
+    padding: .7em;
+    border-radius: 10px;
+    outline: none;
+}
+.billPayment .buttonCalculate button{
+    background-color: #B94E2D;
+    padding: 1em 2.5em;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    color: var(--primary-text-color);
+    font-size: 1.3rem;
+}
+.taxIncluded,
+ .yourTotal{
+    color: var(--primary-text-color);
+}
+.tax_included_btn, .btnPrintBill{
+    margin: 1em 0em;
+}
+
+.btnPrintBill button{
+    background-color: #2FA450;
+    padding: 1em 2.5em;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    color: var(--primary-text-color);
+    font-size: 1.3rem;
 }
